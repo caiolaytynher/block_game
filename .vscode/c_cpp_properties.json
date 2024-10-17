@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "Win32",
+      "includePath": [
+        "${workspaceFolder}/vendor/glfw/include",
+        "${workspaceFolder}/vendor/glad/include",
+        "${workspaceFolder}/vendor/cglm/include"
+      ],
+      "defines": [],
+      "windowsSdkVersion": "10.0.22621.0",
+      "compilerPath": "cl.exe",
+      "intelliSenseMode": "windows-msvc-x64"
+    }
+  ],
+  "version": 4
+}

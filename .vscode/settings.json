@@ -1,0 +1,13 @@
+{
+  "C_Cpp.errorSquiggles": "disabled",
+  "[c]": {
+    "editor.formatOnSave": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.rulers": [120],
+    "editor.guides.indentation": false
+  },
+  "files.associations": {
+    "glad.h": "c",
+    "glfw3.h": "c"
+  }
+}
