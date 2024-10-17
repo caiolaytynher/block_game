@@ -28,7 +28,7 @@ the debugger.
 
 # Vendor
 
-## GLFW
+## [GLFW](https://www.glfw.org/)
 
 Command used to build:
 
@@ -43,7 +43,7 @@ my project, by default it uses /MD, and I'm using /MT.
 
 The `src` directory is just a copy paste from the repo.
 
-## Glad
+## [Glad](https://glad.dav1d.de/)
 
 Options used to generate the files are in the header at `vendor/glad/include`.
 
@@ -69,7 +69,7 @@ Online:
 
 I'm compiling the source code with my own to make the build consistent.
 
-## cglm
+## [cglm](https://github.com/recp/cglm)
 
 Tried to compile the library but it failed, so I copied the `include` directory
 and I'm using it as a header only for now.
