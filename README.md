@@ -1,3 +1,15 @@
+# Block Game
+
+A Minecraft based block game made in C. This is a project that I'm doing to
+learn about game development and low level programming.
+
+## Inspirations
+
+- [WSAL Evan](https://youtu.be/v0Ks1dCMlAA?si=v0jOUZu_1p1F-fg1)
+- [GamesWithGabe](https://youtu.be/sMs28KxbHiA?si=rJ3X3lwMY_I4FYOQ)
+- [jdh](https://youtu.be/4O0_-1NaWnY?si=5rhs5OBzb1l-Ufy1)
+- [Kofybrek](https://youtu.be/o_J-0p9uoSg?si=ejJdkLUbKQprxJYG)
+
 # TODO
 
 - [ ] OS layer
