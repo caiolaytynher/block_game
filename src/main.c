@@ -5,9 +5,6 @@
 #include "core.h"
 #include <stdio.h>
 
-static i32 window_width = 1280;
-static i32 window_height = 720;
-
 static void error_callback(i32 error, const char* description) {
     fprintf(stderr, "Error: %s\n", description);
 }
@@ -68,9 +65,7 @@ void scroll_callback(GLFWwindow* window, f64 xoffset, f64 yoffset) {
 }
 
 static void framebuffer_size_callback(GLFWwindow* window, i32 width, i32 height) {
-    window_width = width;
-    window_height = height;
-    glViewport(0, 0, window_width, window_height);
+    glViewport(0, 0, width, height);
 }
 
 i32 main(void) {
@@ -86,8 +81,9 @@ i32 main(void) {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     GLFWmonitor* window_monitor = NULL;
-    const char* window_title = "Block Game";
-    GLFWwindow* window = glfwCreateWindow(window_width, window_height, window_title, window_monitor, NULL);
+    i32 window_width = 1280;
+    i32 window_height = 720;
+    GLFWwindow* window = glfwCreateWindow(window_width, window_height, "Block Game", window_monitor, NULL);
     if (window == NULL) {
         glfwTerminate();
         return -1;
