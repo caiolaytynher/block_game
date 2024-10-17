@@ -67,7 +67,7 @@ void scroll_callback(GLFWwindow* window, f64 xoffset, f64 yoffset) {
     printf("Scroll offset: (%.2f, %.2f)\n", xoffset, yoffset);
 }
 
-static void frame_buffer_size_callback(GLFWwindow* window, i32 width, i32 height) {
+static void framebuffer_size_callback(GLFWwindow* window, i32 width, i32 height) {
     window_width = width;
     window_height = height;
     glViewport(0, 0, window_width, window_height);
@@ -96,7 +96,7 @@ i32 main(void) {
     glfwSetKeyCallback(window, key_callback);
     glfwSetMouseButtonCallback(window, mouse_button_callback);
     glfwSetScrollCallback(window, scroll_callback);
-    glfwSetFramebufferSizeCallback(window, frame_buffer_size_callback);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     glfwMakeContextCurrent(window);
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
