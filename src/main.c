@@ -23,7 +23,7 @@ static void key_callback(GLFWwindow* window, i32 key, i32 scan_code, i32 action,
         case GLFW_KEY_F11: {
             GLFWmonitor* monitor = glfwGetWindowMonitor(window);
             if (monitor == NULL) {
-                GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+                monitor = glfwGetPrimaryMonitor();
                 const GLFWvidmode* mode = glfwGetVideoMode(monitor);
                 glfwSetWindowMonitor(window, monitor, 0, 0, mode->width, mode->height, mode->refreshRate);
             } else {
