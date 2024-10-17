@@ -100,8 +100,16 @@ i32 main(void) {
     }
 
     glViewport(0, 0, window_width, window_height);
+    f64 last_time = glfwGetTime();
     while (!glfwWindowShouldClose(window))
     {
+        f64 current_time = glfwGetTime();
+        f64 dt = current_time - last_time;
+        last_time = current_time;
+        f64 fps = 1.0 / dt;
+
+        // Sky blue
+        glClearColor(0.53f, 0.81f, 0.92f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         glfwSwapBuffers(window);
