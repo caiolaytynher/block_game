@@ -1,6 +1,6 @@
 # Block Game
 
-A Minecraft based block game made in C. This is a project that I'm doing to
+A Minecraft inspired block game made in C. This is a project that I'm doing to
 learn about game development and low level programming.
 
 ## Inspirations
