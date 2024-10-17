@@ -7,6 +7,17 @@
       "problemMatcher": ["$msCompile"],
       "group": {
         "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "type": "shell",
+      "label": "Build Debug and Run",
+      "command": "${workspaceFolder}/build/debug/${workspaceFolderBasename}.exe",
+      "problemMatcher": [],
+      "dependsOn": "Build Debug",
+      "group": {
+        "kind": "build",
         "isDefault": true
       }
     }
