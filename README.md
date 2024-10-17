@@ -21,10 +21,11 @@ learn about game development and low level programming.
 
 ## Windows
 
-Open the Developer Command Prompt for VS and run `build_{mode}.bat`.
+Open the Developer Command Prompt for VS and run `build_{mode}.bat`. The
+executable will be at `build/{mode}/block_game.exe`.
 
-Inside of VSCode, you can just press `F5` for run `build_debug.bat` then execute
-the debugger.
+Inside of VSCode, you can press `Ctrl+Shift+B` to build and run and `F5` to
+build and run from the debugger.
 
 # Vendor
 
