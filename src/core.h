@@ -19,9 +19,16 @@ typedef uint32_t u32;
 typedef uint64_t u64;
 
 typedef ptrdiff_t isize;
-typedef size_t usize;
 typedef intptr_t intptr;
+
+typedef size_t usize;
 typedef uintptr_t uintptr;
 
 typedef float f32;
 typedef double f64;
+
+typedef enum Error {
+    Error_None,
+    Error_Failed,
+    Error_Not_Implemented,
+} Error;
