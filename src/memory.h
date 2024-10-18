@@ -27,5 +27,18 @@ typedef struct Allocator {
 extern Allocation_Result mem_alloc(usize size, Allocator allocator);
 extern Allocation_Result mem_realloc(void* memory, usize size, Allocator allocator);
 extern Allocation_Result mem_resize(void* memory, usize old_size, usize new_size, Allocator allocator);
-extern void mem_dealloc(void* memory, Allocator allocator);
-extern void mem_reset(Allocator allocator);
+extern Error mem_dealloc(void* memory, Allocator allocator);
+extern Error mem_reset(Allocator allocator);
+
+// This is ment to live to the hole life of the program, no need to free it.
+typedef struct Arena {
+    byte* buffer;
+    usize length;
+    usize current_offset;
+    usize previous_offset;
+    usize alignment;
+    Arena* next;
+} Arena;
+
+extern Allocator arena_allocator_make();
+extern Allocator arena_allocator_make_sized(usize size);

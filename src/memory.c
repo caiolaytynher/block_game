@@ -12,10 +12,10 @@ Allocation_Result mem_resize( void* memory, usize old_size, usize new_size, Allo
     return allocator.proc(Allocation_Type_Resize, memory, old_size, new_size);
 }
 
-void mem_dealloc(void* memory, Allocator allocator) {
-    allocator.proc(Allocation_Type_Dealloc, memory, 0, 0);
+Error mem_dealloc(void* memory, Allocator allocator) {
+    return allocator.proc(Allocation_Type_Dealloc, memory, 0, 0).error;
 }
 
-void mem_reset(Allocator allocator) {
-    allocator.proc(Allocation_Type_Reset, NULL, 0, 0);
+Error mem_reset(Allocator allocator) {
+    return allocator.proc(Allocation_Type_Reset, NULL, 0, 0).error;
 }
