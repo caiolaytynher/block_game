@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include <assert.h> // TODO(caio): make my own version
 
 #define KiB(n) ((n) * 1024ull)
 #define MiB(n) (KiB(n) * 1024ull)

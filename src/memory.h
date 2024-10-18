@@ -41,4 +41,3 @@ typedef struct Arena {
 } Arena;
 
 extern Allocator arena_allocator_make();
-extern Allocator arena_allocator_make_sized(usize size);
