@@ -31,5 +31,6 @@ typedef double f64;
 typedef enum Error {
     Error_None,
     Error_Failed,
-    Error_Not_Implemented,
+    Error_Invalid,
+    Error_Not_Implemented
 } Error;
