@@ -7,7 +7,6 @@
     "editor.guides.indentation": false
   },
   "files.associations": {
-    "glad.h": "c",
-    "glfw3.h": "c"
+    "*.h": "c"
   }
 }
