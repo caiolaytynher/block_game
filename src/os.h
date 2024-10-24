@@ -2,21 +2,19 @@
 
 #include "core.h"
 
-typedef struct Page_Size_Result {
+typedef struct OS_Page_Size_Result {
     usize page_size;
     Error error;
-} Page_Size_Result;
+} OS_Page_Size_Result;
 
-extern Page_Size_Result os_page_size();
+extern OS_Page_Size_Result os_page_size();
 
-typedef struct Page {
+// The memory size is always divisible by the page size.
+typedef struct OS_Memory_Result {
     void* memory;
-    usize count;
-} Page;
-
-typedef struct Page_Result {
-    Page page;
+    usize size;
     Error error;
-}
+} OS_Memory_Result;
 
-extern Page_Result os_commit_memory(usize size);
+// Allocate the minimum amount of pages to hold the specified size.
+extern OS_Memory_Result os_memory_commit(usize size);

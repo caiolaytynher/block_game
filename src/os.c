@@ -4,8 +4,8 @@
 #include <Windows.h>
 #endif
 
-Page_Size_Result os_page_size() {
-    Page_Size_Result result = {0};
+OS_Page_Size_Result os_page_size() {
+    OS_Page_Size_Result result = {0};
 #if defined _WIN32
     LPSYSTEM_INFO system_info;
     GetSystemInfo(system_info);
@@ -17,14 +17,18 @@ Page_Size_Result os_page_size() {
 #endif
 }
 
-Page_Result os_commit_memory(usize size) {
-    Page_Result result = {0};
+OS_Memory_Result os_memory_commit(usize size) {
+    OS_Memory_Result result = {0};
 #if defined _WIN32
-    result.page.count = 1 + size / os_page_size().page_size;
-    result.page.memory = VirtualAlloc(NULL, result.page.count, MEM_COMMIT, PAGE_READWRITE);
-    if (result.memory == NULL) {
+    usize page_size = os_page_size().page_size;
+    usize page_count = 1 + size / page_size;
+    usize allocation_size = page_size * page_count;
+    void* memory = VirtualAlloc(NULL, allocation_size, MEM_COMMIT, PAGE_READWRITE);
+    if (memory == NULL) {
         result.error = Error_Failed;
     }
+    result.memory = memory;
+    result.size = allocation_size;
     return result;
 #else
     result.error = Error_Not_Implemented;
