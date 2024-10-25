@@ -3,7 +3,7 @@
 if not exist build mkdir build
 if not exist build\debug mkdir build\debug
 
-cl /Zi ^
+cl /Zi /DGLFW_INCLUDE_NONE ^
     /Ivendor\src ^
     /Ivendor\glfw\include ^
     /Ivendor\glad\include ^
