@@ -10,13 +10,16 @@ static Allocator_Result arena_allocator_proc(
 ) {
     Allocator_Result result = {0};
     Arena* arena = data.arena;
+
     switch (mode) {
     case Allocator_Mode_Alloc: {
 
     } break;
     default:
-        result.error = Error_Invalid
+        result.error = Error_Invalid;
     }
+
+    return result;
 }
 
 Allocator arena_allocator_create(usize size, usize alignment) {
