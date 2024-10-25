@@ -13,13 +13,13 @@
 // TODO(caio): Replace print with log when the logging system is ready
 #define panic(...)                                  \
     printf("Panic at %s:%d\n", __FILE__, __LINE__); \
-    printf(##__VA_ARGS__);                          \
+    printf(""##__VA_ARGS__);                        \
     exit(1)
 #define runtime_assert(expression, ...)                            \
     if (!(expression)) {                                           \
         printf("Assertion failed at %s:%d\n", __FILE__, __LINE__); \
         printf(#expression "\n");                                  \
-        printf(##__VA_ARGS__);                                     \
+        printf(""##__VA_ARGS__);                                   \
         exit(1);                                                   \
     }
 
