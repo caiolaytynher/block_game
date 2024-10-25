@@ -7,7 +7,7 @@ typedef struct OS_Page_Size_Result {
     Error error;
 } OS_Page_Size_Result;
 
-extern OS_Page_Size_Result os_page_size();
+extern OS_Page_Size_Result os_get_page_size();
 
 // The memory size is always divisible by the page size.
 typedef struct OS_Memory_Result {

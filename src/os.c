@@ -4,12 +4,12 @@
 #include <Windows.h>
 #endif
 
-OS_Page_Size_Result os_page_size() {
+OS_Page_Size_Result os_get_page_size() {
     OS_Page_Size_Result result = {0};
 #if defined _WIN32
-    LPSYSTEM_INFO system_info;
-    GetSystemInfo(system_info);
-    result.page_size = system_info->dwPageSize;
+    SYSTEM_INFO system_info = {0};
+    GetSystemInfo(&system_info);
+    result.page_size = system_info.dwPageSize;
     return result;
 #else
     result.error = Error_Not_Implemented;
@@ -20,7 +20,7 @@ OS_Page_Size_Result os_page_size() {
 OS_Memory_Result os_memory_commit(usize size) {
     OS_Memory_Result result = {0};
 #if defined _WIN32
-    usize page_size = os_page_size().page_size;
+    usize page_size = os_get_page_size().page_size;
     usize page_count = 1 + size / page_size;
     usize allocation_size = page_size * page_count;
     void* memory = VirtualAlloc(NULL, allocation_size, MEM_COMMIT, PAGE_READWRITE);
