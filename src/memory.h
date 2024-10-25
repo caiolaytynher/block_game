@@ -32,11 +32,13 @@ typedef union Allocator_Data {
     Arena* arena;
 } Allocator_Data;
 
-typedef Allocator_Result (*Allocator_Proc)(Allocator_Data data,
-                                           Allocator_Mode mode,
-                                           void* memory,
-                                           usize old_size,
-                                           usize new_size);
+typedef Allocator_Result (*Allocator_Proc)(
+    Allocator_Data data,
+    Allocator_Mode mode,
+    void* memory,
+    usize old_size,
+    usize new_size
+);
 
 typedef struct Allocator {
     Allocator_Data data;
